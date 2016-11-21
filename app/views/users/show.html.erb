@@ -1,0 +1,10 @@
+<h1><%= full_name %></h1>
+
+<p><%= @user.user_name %></p>
+
+<p><%= @user.birthday %></p>
+<p>
+<% @user_posts.each do |post| %>
+<%= link_to post.title, post_path(post) %>
+<% end %> 
+</p>
