@@ -2,7 +2,14 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+    
+    <div class="field_group">
+      <%= f.label "Type of User", class: 'control-label' %>
+      <div class="field">
+    <%= f.select(:user_type, options_for_select([['RENTER','RENTER'],['ROOMIE','ROOMIE']])) %>
+  </div>
+  </div>
+    
    <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true %>

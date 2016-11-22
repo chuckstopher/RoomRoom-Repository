@@ -3,16 +3,38 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   
-     <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
+  <div><h1>User Attributes</h1>
+   <p>Please select the options that apply to you</p>
+  
+   <div class="field_group">
+      <%= f.label "Do you smoke?", class: 'control-label' %>
+      <div class="field">
+    <%= f.select(:user_smoke, options_for_select([['YES','YES'],['NO','NO']])) %>
   </div>
   
-   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
+   <div class="field_group">
+      <%= f.label "Do you have pets", class: 'control-label' %>
+      <div class="field">
+    <%= f.select(:user_pets, options_for_select([['YES','YES'],['NO','NO']])) %>
   </div>
   
+  
+   <div class="field_group">
+      <%= f.label "Weekday Routine", class: 'control-label' %>
+      <div class="field">
+    <%= f.select(:user_weekday_routine, options_for_select([['9-5 MON-FRI','9-5 MON-FRI'],['Nightshifts','Nightshifts'],['Other','Other']])) %>
+  </div>
+  
+ <div class="field_group">
+      <%= f.label "Cleanliness", class: 'control-label' %>
+      <div class="field">
+    <%= f.select(:user_cleanliness, options_for_select([['Extremely Clean','Extremely Clean'],['Fairly Clean','Fairly Clean'],['Cleaning isnt my priority','Cleaning isnt my priority']])) %>
+  </div>
+  
+
+  
+  <div><h1>Account Details</h1></div>
+
   <div class="field">
     <%= f.label :user_name %><br />
     <%= f.text_field :user_name, autofocus: true %>
@@ -28,10 +50,7 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
