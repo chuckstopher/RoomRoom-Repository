@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   
-   root 'posts#index'
+   
    
   devise_for :users 
-   resources :comments
+  
+  resources :users
+  
+  resources :comments
   
   resources :posts
   
-  resources :users
+  root 'posts#index'
   
   resources :conversations do
     resources :messages

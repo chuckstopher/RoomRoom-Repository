@@ -5,6 +5,12 @@
   
   <div><h1>User Attributes</h1>
    <p>Please select the options that apply to you</p>
+   
+   <div class="field_group">
+      <%= f.label "Renter or Roomie?", class: 'control-label' %>
+      <div class="field">
+    <%= f.select(:user_smoke, options_for_select([['RENTER','RENTER'],['ROOMIE','ROOMIE']])) %>
+  </div>
   
    <div class="field_group">
       <%= f.label "Do you smoke?", class: 'control-label' %>
@@ -29,6 +35,12 @@
       <%= f.label "Cleanliness", class: 'control-label' %>
       <div class="field">
     <%= f.select(:user_cleanliness, options_for_select([['Extremely Clean','Extremely Clean'],['Fairly Clean','Fairly Clean'],['Cleaning isnt my priority','Cleaning isnt my priority']])) %>
+  </div>
+  
+  <div class="field_group">
+      <%= f.label "Please describe your living habits, personality, hobbies etc. Min 30 words", class: 'control-label' %>
+      <div class="text_area">
+        <%= f.text_area(:about)%>
   </div>
   
 
