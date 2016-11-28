@@ -1,9 +1,21 @@
-<h1>All Conversations</h1>
+<h1>Inbox</h1>
+<td><%= link_to "Create Message", new_conversation_path %></td>
 
+<table class="table table-hover">
+<thead>
+    <tr>
+      <th>Received at:</th>
+      <th>Messages</th>
+  </thead>
+
+  <tbody>
 <% @conversations.each do |conversation| %>
-<div>
-    <%= link_to conversation.subject, conversation_path(conversation) %>
-</div>
-<% end %>
+<tr>
+<th scope="row"><ul><%= conversation.updated_at %></ul>
+    <td><%= link_to conversation.subject, conversation_path(conversation) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
 
-<%= link_to "Create Message", new_conversation_path %>
+

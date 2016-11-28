@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   
   resources :posts
   
+  resources :searches
+  
+  
   root 'posts#index'
   
   resources :conversations do
