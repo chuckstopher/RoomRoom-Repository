@@ -1,7 +1,9 @@
 <h1><%= full_name %>  <strong>"<%= @user.user_name.capitalize %>"</strong></h1>
+<% if @user == current_user %>
 
-
-
+<% else %>
+<%= link_to ("Message This User"), new_conversation_path(:user_id => @user.id), class: "btn btn-large btn-primary" %>
+<% end %>
 <div class="container">
     <div id="main_area">
         <!-- Slider -->

@@ -1,8 +1,17 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=325771567809411";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Posts</h1>
 
-<%= link_to "Advanced Search", new_search_path %> 
+
 
 <table class="table table-hover">
 <thead>
@@ -26,13 +35,13 @@
         <td><%= post.price %></td>
         <td><%= post.updated_at.to_date %></td>
         <td><%= link_to post.user.user_name, user_path(post.user) %></td>
-        <td><%= link_to image_tag post.image.url(:medium), target: '_blank' %></td>
+        <td><%= link_to image_tag post.image.url, :size => '150x150' %></td>
+        <td><%= link_to 'View Room', post, class: "btn btn-large btn-primary" %></td>
+        <td><div class="fb-like" data-href="https://room-room-chuckstopher.c9users.io/posts/17" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></td>
        
-        <td><%= link_to 'View Room', post %></td>
-        <td><div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div></td>
         <% if post.user == current_user %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit your Ad', edit_post_path(post) %></td>
+        <td><%= link_to 'Remove your Ad', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         <% end %>
       </tr>

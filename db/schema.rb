@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128201034) do
+ActiveRecord::Schema.define(version: 20161203194601) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
@@ -127,9 +127,19 @@ ActiveRecord::Schema.define(version: 20161128201034) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text     "about"
+    t.decimal  "budget"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "usersearches", force: :cascade do |t|
+    t.string   "keywords"
+    t.boolean  "pets"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal  "minbudget"
+    t.decimal  "maxbudget"
+  end
 
 end
