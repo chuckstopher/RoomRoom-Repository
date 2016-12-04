@@ -77,5 +77,13 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('roomroomprofilepictures'),
+    access_key_id: ENV.fetch('AKIAJS3SLIKI5VQASY6A'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('IRELAND'),
+  }
+}
 end
