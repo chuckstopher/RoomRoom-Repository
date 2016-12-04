@@ -3,14 +3,14 @@
 <table class="table table-hover">
 <thead>
     <tr>
-      <th>Received at:</th>
+     
       <th>Messages</th>
   </thead>
 
   <tbody>
 <% @conversations.each do |conversation| %>
 <tr>
-<th scope="row"><ul><%= conversation.updated_at %></ul>
+
     <td><%= link_to conversation.subject, conversation_path(conversation) %></td>
   </tr>
   <% end %>

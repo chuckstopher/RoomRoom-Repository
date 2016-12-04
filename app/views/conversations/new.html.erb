@@ -2,7 +2,8 @@
 
 <%= form_tag conversations_path, method: :post do %>
    
-    
+   <%= select_tag :user_id, options_from_collection_for_select(@recipients, :id, :user_name) %>
+ 
     <div>
         <%= text_field_tag :subject, nil, placeholder: "Subject" %>
     </div>
@@ -10,5 +11,6 @@
     <div>
         <%= text_area_tag :body,nil, placeholder: "Type a message" %>
     </div>
+
 <%= submit_tag %>
 <% end %>
