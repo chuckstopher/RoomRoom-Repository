@@ -1,0 +1,22 @@
+<h1>Search Results</h1>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
+<% if @search.search_posts.empty? %>
+
+<p>No Listings found</p>
+
+<% else %>
+
+<% @search.search_posts.each do |c| %>
+<br>
+
+<div class = "div">
+    <h1><%= link_to c.title, post_path(c.id) %></h1>
+    <p>Price: €<%= c.price %></p>
+    <p>Address: <%= c.address %></p>
+   
+</div>
+
+<% end %>
+<% end %>

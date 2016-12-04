@@ -1,0 +1,20 @@
+<h1>Search Results</h1>
+
+<p><%= link_to 'Back', new_usersearch_path %></p>
+
+<% if @usersearch.search_users.empty? %>
+
+<p>No Roomies found :(</p>
+
+<% else %>
+
+<% @usersearch.search_users.each do |c| %>
+<br>
+
+<div class = "div">
+    <h1><%= link_to c.user_name, user_path(c.id) %></h1>
+    
+</div>
+
+<% end %>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Roomie Search</h1>
+
+<%= form_for @usersearch, html: {class:"pure-form"} do |s| %>
+
+
+<div class="field">
+    <%= s.label :keywords %><br/>
+    <%= s.text_field :keywords %>
+</div>
+
+
+<div class="field">
+    <p><%= s.label :minbudget, "Minimum Budget" %> - <%= s.text_field :minbudget, size: 10 %></p>
+    <p><%= s.label :maxbudget, "Maximum Budget" %> - <%= s.text_field :maxbudget, size: 10 %></p>
+    
+</div>
+
+<div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary"%></div>
+<% end %>
+
+<p><%= link_to 'Back' , posts_path %></p>
