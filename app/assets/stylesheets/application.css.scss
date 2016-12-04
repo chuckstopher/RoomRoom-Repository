@@ -35,6 +35,11 @@ body{
 	font-size: 1.6rem;
 	line-height: 3rem;
 	color: #737373;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 25px;
+	width: 90%;
+	height: 95%;
 }
 
 .wrapper{
@@ -66,15 +71,52 @@ h1,h2,h3,h4,h5,h6,p,ul,li{
     color: $dark;
 }
 
+table{
+    padding: 35px;
+    width: 80%;
+}
+
+.scope{
+    width: 80%;
+}
+.navbar-header:hover{
+    
+    font-size: 2rem;
+    border-radius: 10px;
+   opacity: 0.2;
+   color: white;
+}
+
+form, message_inbox {
+  background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+  margin: auto;
+  position: relative;
+  width: 550px;
+  height: 100%;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 24px;
+  font-weight: bold;
+  color: #09C;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #999;
+  border: inset 1px solid #333;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
 
 
 
 
-
-
-
-
-
+.fb-like{
+    width: 5%;
+}
 
 
 

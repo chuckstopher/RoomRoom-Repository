@@ -9,14 +9,11 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<h1>Listings</h1>
 
 
 
 <table class="table table-hover">
-<thead>
-    
-  </thead>
 
   <tbody>
     <% @posts.each do |post| %>
@@ -29,7 +26,7 @@
         <td><strong>Renter Profile: </strong></br><%= link_to post.user.user_name, user_path(post.user) %></td>
         <td><%= link_to image_tag post.image.url, :size => '150x150' %></td>
         <td><%= link_to 'View Room', post, class: "btn btn-large btn-primary" %></td>
-        <td><div class="fb-like" data-href="https://room-room-chuckstopher.c9users.io/posts/17" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></td>
+        <td><div class="fb-like"  data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></td>
        
         <% if post.user == current_user %>
         <td><%= link_to 'Edit your Ad', edit_post_path(post) %></td>

@@ -39,3 +39,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Remove your Ad', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
